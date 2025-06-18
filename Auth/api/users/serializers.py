@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.hashers import make_password
 from rest_framework.decorators import authentication_classes, permission_classes
 
-from .models import CustomeUser
+from .models import CustomUser
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     def create(self, validated_data):
         password = validated_data.pop('password', None)
@@ -21,7 +21,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         instance.save()
         return instance
     class Meta:
-        model = CustomeUser
+        model = CustomUser
         extra_kwargs = {
             'password': {'write_only': True}
         }
