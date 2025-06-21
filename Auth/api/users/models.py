@@ -12,7 +12,7 @@ class CustomUser(AbstractUser):
     phone = models.CharField(max_length=15, null=True, blank=True)
 
     gender = models.CharField(
-        max_length=10,
+        max_length=10, null= True, blank=True
     )
     session_token = models.CharField(max_length=10 , default=0)
     created_at = models.DateTimeField(auto_now_add=True)
