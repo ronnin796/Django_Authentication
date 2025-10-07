@@ -41,6 +41,7 @@ def signin(request):
             token  = generate_session_token()
             user.session_token = token
             user.save()
+            usr_dict['session_token'] = token
             login(request, user)
             return JsonResponse({'token': token, 'user': usr_dict})
         else:

@@ -1,1 +1,1 @@
-#Django Authentication Demo
+#Django Authentication Dem
